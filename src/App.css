@@ -1,0 +1,32 @@
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+html{
+    height: 100vh;
+    background-color: #c0c0;
+}
+.logo{
+    height: 100px;
+}
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.navbar-nav{
+    list-style-type:none;
+    display: flex;
+}
+.navbar-nav > li{
+    font-weight: 3000;
+    margin:0 10px;
+    padding: 15px;
+}
+
+.navbar-nav > li:hover{
+    cursor: pointer;
+    background-color: #2ff;
+}
