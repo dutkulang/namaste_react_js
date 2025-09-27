@@ -6,7 +6,10 @@
 }
 html{
     height: 100vh;
+    width: 100vw;
     background-color: #c0c0;
+    max-width: 1110px;
+    margin: 0 auto;
 }
 .logo{
     height: 100px;
@@ -14,7 +17,8 @@ html{
 header{
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    margin-bottom: 16px;
 }
 .navbar-nav{
     list-style-type:none;
@@ -24,9 +28,43 @@ header{
     font-weight: 3000;
     margin:0 10px;
     padding: 15px;
+    /* background-color: red; */
 }
 
 .navbar-nav > li:hover{
     cursor: pointer;
-    background-color: #2ff;
+    background-color:#ffbc94;
+    color: aliceblue;
+    border-bottom: 2px solid red;
+}
+.item-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap:50px;
+    justify-content: space-evenly;
+}
+.item{
+    width: 250px;
+    border-radius: 8px;
+    padding-bottom: 20px;
+}
+.item-content{
+    padding: 0px 8px;
+}
+.item:hover{
+    box-shadow: 0px 0px 10px #ffbc94;
+}
+.item > img{
+    width: 100%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.view-btn{
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-top: 12px;
+    padding:6px 20px ;
 }
