@@ -1,12 +1,17 @@
-export const ItemCard = ()=>{
+export const ItemCard = ({name, description, link})=>{
+    console.log(link)
     return (
+        <a href={link} className="item-link">
         <div className="item">
-        <img className="item-image" src="https://images.pexels.com/photos/305070/pexels-photo-305070.jpeg" alt="" />
+        <img 
+        className="item-image" 
+        src={link} alt="" />
         <div className="item-content">
-            <h3>Car Name</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <button className="view-btn">View ...</button>
+            <h3>{name}</h3>
+            <p>{description}</p>
+            <button className="view-btn" href={link}>View ...</button>
         </div>
         </div>
+        </a>
     )
 }
