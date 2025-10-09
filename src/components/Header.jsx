@@ -1,7 +1,10 @@
+import {LOGO_URL} from  "../utils/constants.jsx"
+
+
 const Header  = ()=>{
     return (
         <header>
-            <img className="logo" src="https://www.pngplay.com/wp-content/uploads/6/Free-Symbol-Transparent-PNG.png" />
+            <img className="logo" src={LOGO_URL} />
         
             <nav>
                 <ul className="navbar-nav">

@@ -1,46 +1,28 @@
 import './App.css'
 import Header from "./components/Header"
+import { items }  from './utils/mockdata' 
 import { ItemCard } from './components/ItemCard'
+import { useState } from 'react'
 function App() {
-
+  const [ListOfItems, setListOfItems] = useState(items)
   return (
     <>
         <Header />
+        <button type="button" style={{margin:"0 20px", padding:"0px 10px"}}
+        onClick={()=>{
+          setListOfItems(items)
+        }}
+        >all</button>
+        <button type="button"
+        onClick={()=>{
+          const filtered = ListOfItems.filter(item =>  item.price >= 350)
+          console.log(filtered)
+          setListOfItems(filtered)
+        }}
+        >Below $300</button>
         <section className='item-container'>
-          <ItemCard 
-            name="Benz"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-            link="https://images.pexels.com/photos/305070/pexels-photo-305070.jpeg"
-            />
-          <ItemCard 
-          name="BMW 2016"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          link="https://images.pexels.com/photos/13513971/pexels-photo-13513971.jpeg"
-          />
-
-          <ItemCard 
-            name="Benz"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-            link="https://images.pexels.com/photos/305070/pexels-photo-305070.jpeg"
-            />
-          <ItemCard 
-          name="BMW 2016"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          link="https://images.pexels.com/photos/13513971/pexels-photo-13513971.jpeg"
-          />
-
-          <ItemCard 
-            name="Benz"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-            link="https://images.pexels.com/photos/305070/pexels-photo-305070.jpeg"
-            />
-          <ItemCard 
-          name="BMW 2016"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          link="https://images.pexels.com/photos/13513971/pexels-photo-13513971.jpeg"
-          />
-
           
+        {ListOfItems.map(item => <ItemCard key={item.id} name={item.name} description={item.description} price={item.price} link={item.link} />)}          
           
         </section>
     </>
